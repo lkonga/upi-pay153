@@ -1,0 +1,15 @@
+services:
+  upi-pay153:
+    build: .
+    container_name: upi-pay153
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:9763:9763"
+    environment:
+      PAY153_HOST: "0.0.0.0"
+      PAY153_PORT: "9763"
+    volumes:
+      - upi-pay153-runtime:/app/runtime
+
+volumes:
+  upi-pay153-runtime:
